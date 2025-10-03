@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/real-store/',   // <- Add this line
+  base: '/e-commerce-store/',   // GitHub Pages base path for repo
   plugins: [react(), tailwindcss()],
 })
