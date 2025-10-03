@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Style.css';
+import '../style.css';
 import _search_icon_dark from '../assets/search-b.png';
 import { FaShoppingCart } from 'react-icons/fa';
 
