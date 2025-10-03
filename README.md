@@ -1,16 +1,87 @@
-# React + Vite
+# RealStore (Work-in-Progress E‑Commerce)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A simple React + Vite storefront UI. This is an unfinished, non-production demo focused on layout and component structure. Responsiveness and the footer are intentionally left for later.
 
-Currently, two official plugins are available:
+## Quick start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+# Install dependencies
+npm install
 
-## React Compiler
+# Start dev server
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Lint
+npm run lint
 
-## Expanding the ESLint configuration
+# Build for production
+npm run build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Preview the production build
+npm run preview
+```
+
+## Tech stack
+- **React 18** (functional components)
+- **Vite** (dev/build tooling)
+- **ESLint** (basic lint rules)
+- **Tailwind base import** in `src/style.css` (utility reset only; custom CSS used for layout)
+
+## Features (current)
+- Home page with hero, category grid, and product grid
+- Product data fetched from `fakestoreapi.com` (client-side)
+- Basic header with search box and cart icon
+- Newsletter form section
+- Light UX polish: loading skeletons, error and empty states
+
+## Not done yet (planned)
+- Responsive styles (mobile/tablet)
+- Footer content and links
+- Real cart/checkout/auth flows
+- Routing and product details
+- Global state management
+
+## Project structure
+```
+realstore/
+  public/
+  src/
+    assets/              # images/icons
+    components/          # UI components
+      Header.jsx
+      Hero.jsx
+      CategoryCard.jsx
+      ProductCard.jsx
+      NewsletterForm.jsx
+    style.css            # main custom styles
+    index.css            # global base
+    App.jsx              # page composition
+    main.jsx             # React entry
+  index.html
+  vite.config.js
+  eslint.config.js
+  package.json
+```
+
+## Development notes
+- Product list uses Fake Store API. Network errors will show a friendly message; otherwise a skeleton is shown while loading.
+- Buttons and inputs have minimal focus styles for accessibility. The search input intentionally has no extra outline on focus per current design.
+- Category section uses inline SVG icons.
+
+## Environment
+No environment variables are required. The app fetches public data from `https://fakestoreapi.com`.
+
+## Scripts
+- **npm run dev**: start the Vite dev server
+- **npm run build**: create a production build
+- **npm run preview**: preview the production build locally
+- **npm run lint**: run ESLint
+
+## Contributing
+This is a personal demo. If you want to extend it:
+- Keep edits small and focused.
+- Match existing code style and naming.
+- Avoid adding dependencies unless necessary.
+
+## License
+No license specified. Assume all rights reserved unless stated otherwise.
